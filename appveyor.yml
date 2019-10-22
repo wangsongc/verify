@@ -109,7 +109,7 @@ build_script:
           $env:BUILD_DIR="build-cmake"
         }
         if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq 'Visual Studio 2019') {
-          $env:BUILD_DIR="build-cmake-vs2019"
+          $env:BUILD_DIR="build-cmake-2019"
         }
         md $env:BUILD_DIR 2> $null
         cd $env:BUILD_DIR
