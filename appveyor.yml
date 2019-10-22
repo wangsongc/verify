@@ -2,7 +2,7 @@
 version: 2.2.0.{build}
 
 os:
-  - Visual Studio 2017
+#  - Visual Studio 2017
   - Visual Studio 2019
 platform:
   - x64
@@ -27,42 +27,42 @@ environment:
     EVENT_TESTS_PARALLEL: 20
     EVENT_BUILD_PARALLEL: 10
   matrix:
-    - EVENT_BUILD_METHOD: "cmake"
-      EVENT_CMAKE_OPTIONS: ""
-      APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
-    - EVENT_BUILD_METHOD: "cmake"
-      EVENT_CMAKE_OPTIONS: "-DEVENT__LIBRARY_TYPE=STATIC"
-      APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
-    - EVENT_BUILD_METHOD: "autotools"
-      EVENT_CONFIGURE_OPTIONS: ""
-      APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
-    - EVENT_BUILD_METHOD: "autotools"
-      EVENT_CONFIGURE_OPTIONS: "--disable-openssl"
-      APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
-    - EVENT_BUILD_METHOD: "autotools"
-      EVENT_CONFIGURE_OPTIONS: "--disable-thread-support"
-      APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
-    - EVENT_BUILD_METHOD: "autotools"
-      EVENT_CONFIGURE_OPTIONS: "--disable-debug-mode"
-      APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
-    - EVENT_BUILD_METHOD: "autotools"
-      EVENT_CONFIGURE_OPTIONS: "--disable-malloc-replacement"
-      APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
-    - EVENT_BUILD_METHOD: "cmake"
-      EVENT_CMAKE_OPTIONS: "-DEVENT__DISABLE_OPENSSL=ON"
-      APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
-    - EVENT_BUILD_METHOD: "cmake"
-      EVENT_CMAKE_OPTIONS: "-DEVENT__DISABLE_THREAD_SUPPORT=ON"
-      APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
-    - EVENT_BUILD_METHOD: "cmake"
-      EVENT_CMAKE_OPTIONS: "-DEVENT__DISABLE_DEBUG_MODE=ON"
-      APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
-    - EVENT_BUILD_METHOD: "cmake"
-      EVENT_CMAKE_OPTIONS: "-DEVENT__DISABLE_MM_REPLACEMENT=ON"
-      APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
-    - EVENT_BUILD_METHOD: "cmake"
-      EVENT_CMAKE_OPTIONS: "-DCMAKE_C_FLAGS='-DUNICODE -D_UNICODE'"
-      APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+#     - EVENT_BUILD_METHOD: "cmake"
+#       EVENT_CMAKE_OPTIONS: ""
+#       APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+#     - EVENT_BUILD_METHOD: "cmake"
+#       EVENT_CMAKE_OPTIONS: "-DEVENT__LIBRARY_TYPE=STATIC"
+#       APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+#     - EVENT_BUILD_METHOD: "autotools"
+#       EVENT_CONFIGURE_OPTIONS: ""
+#       APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+#     - EVENT_BUILD_METHOD: "autotools"
+#       EVENT_CONFIGURE_OPTIONS: "--disable-openssl"
+#       APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+#     - EVENT_BUILD_METHOD: "autotools"
+#       EVENT_CONFIGURE_OPTIONS: "--disable-thread-support"
+#       APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+#     - EVENT_BUILD_METHOD: "autotools"
+#       EVENT_CONFIGURE_OPTIONS: "--disable-debug-mode"
+#       APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+#     - EVENT_BUILD_METHOD: "autotools"
+#       EVENT_CONFIGURE_OPTIONS: "--disable-malloc-replacement"
+#       APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+#     - EVENT_BUILD_METHOD: "cmake"
+#       EVENT_CMAKE_OPTIONS: "-DEVENT__DISABLE_OPENSSL=ON"
+#       APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+#     - EVENT_BUILD_METHOD: "cmake"
+#       EVENT_CMAKE_OPTIONS: "-DEVENT__DISABLE_THREAD_SUPPORT=ON"
+#       APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+#     - EVENT_BUILD_METHOD: "cmake"
+#       EVENT_CMAKE_OPTIONS: "-DEVENT__DISABLE_DEBUG_MODE=ON"
+#       APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+#     - EVENT_BUILD_METHOD: "cmake"
+#       EVENT_CMAKE_OPTIONS: "-DEVENT__DISABLE_MM_REPLACEMENT=ON"
+#       APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+#     - EVENT_BUILD_METHOD: "cmake"
+#       EVENT_CMAKE_OPTIONS: "-DCMAKE_C_FLAGS='-DUNICODE -D_UNICODE'"
+#       APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
     - EVENT_BUILD_METHOD: "cmake"
       EVENT_CMAKE_OPTIONS: ""
       APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2019"
@@ -127,9 +127,9 @@ build_script:
       }
 
 cache:
-  - build-cmake
-  - build-cmake-vs2019
-  - build-autotools
+#  - build-cmake
+#  - build-cmake-vs2019
+#  - build-autotools
 
 on_failure:
   - 7z a libevent.zip .
