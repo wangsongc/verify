@@ -54,6 +54,12 @@ int main()
 
 	usec1 = diff1.tv_sec * 1000000 + diff1.tv_usec;
 	usec2 = diff2.tv_sec * 1000000 + diff2.tv_usec;
+	printf("tv1.tv_sec=:%ld\n",tv1.tv_sec);
+	printf("tv1.tv_usec=:%ld\n",tv1.tv_usec);
+	printf("tv2.tv_sec=:%ld\n",tv2.tv_sec);
+	printf("tv2.tv_usec=:%ld\n",tv2.tv_usec);
+	printf("tv3.tv_sec=:%ld\n",tv3.tv_sec);
+	printf("tv3.tv_usec=:%ld\n",tv3.tv_usec);
 
 	assert(usec1 > 200000 && usec1 < 300000);
 	assert(usec2 > 80000 && usec2 < 120000);
