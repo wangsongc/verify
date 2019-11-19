@@ -1,9 +1,9 @@
 ---
 os:
-  - linux
-  # - osx
+#   - linux
+  - osx
 sudo: false
-dist: trusty
+# dist: trusty
 # osx_image: xcode10.1
 
 branches:
@@ -20,7 +20,7 @@ git:
 env:
   matrix:
     - EVENT_BUILD_METHOD=cmake EVENT_CMAKE_OPTIONS=""
-    - EVENT_BUILD_METHOD=cmake EVENT_CMAKE_OPTIONS="" COVERALLS=yes
+#     - EVENT_BUILD_METHOD=cmake EVENT_CMAKE_OPTIONS="" COVERALLS=yes
     # - EVENT_BUILD_METHOD=cmake EVENT_CMAKE_OPTIONS="-DEVENT__DISABLE_OPENSSL=ON"
     # - EVENT_BUILD_METHOD=cmake EVENT_CMAKE_OPTIONS="-DEVENT__DISABLE_THREAD_SUPPORT=ON"
     # - EVENT_BUILD_METHOD=cmake EVENT_CMAKE_OPTIONS="-DEVENT__DISABLE_DEBUG_MODE=ON"
