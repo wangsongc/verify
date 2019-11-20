@@ -25,8 +25,8 @@ evutil_usleep_(const struct timeval *tv)
 		ts.tv_sec = tv->tv_sec;
 		ts.tv_nsec = tv->tv_usec*1000;
 		clock_nanosleep_abstime(&ts);*/
-		sleep(tv->tv_sec);
-		usleep(tv->tv_usec);
+		//sleep(tv->tv_sec);
+		usleep((tv->tv_sec * 1000000) + tv->tv_usec);
 	}
 #elif defined(EVENT__HAVE_USLEEP)
 	/* Some systems don't like to usleep more than 999999 usec */
@@ -65,7 +65,9 @@ int main()
 	printf("tv2.tv_usec=:%ld\n",tv2.tv_usec);
 	printf("tv3.tv_sec=:%ld\n",tv3.tv_sec);
 	printf("tv3.tv_usec=:%ld\n",tv3.tv_usec);
-
+	
+	printf("usec1===:%ld\n",usec1);
+	printf("usec2===:%ld\n",usec2);
 	assert(usec1 > 200000 && usec1 < 300000);
 	assert(usec2 > 80000 && usec2 < 80000);
 }
