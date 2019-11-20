@@ -21,7 +21,7 @@ evutil_usleep_(const struct timeval *tv)
 		struct timespec ts;
 		ts.tv_sec = tv->tv_sec;
 		ts.tv_nsec = tv->tv_usec*1000;
-		nanosleep(&ts, NULL);
+		clock_nanosleep(CLOCK_REALTIME, 0, &ts, NULL);
 	}
 #elif defined(EVENT__HAVE_USLEEP)
 	/* Some systems don't like to usleep more than 999999 usec */
