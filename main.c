@@ -2,10 +2,7 @@
 #include <openssl/ssl.h>
 #include <openssl/err.h>
 #include <sys/time.h>
-#include <time.h>
 #include <assert.h>
-#include <mach/clock.h>
-#include <mach/mach.h>
 
 #define EVENT__HAVE_NANOSLEEP 1
 
