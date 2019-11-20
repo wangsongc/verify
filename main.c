@@ -67,7 +67,7 @@ int main()
 	printf("tv3.tv_usec=:%ld\n",tv3.tv_usec);
 
 	assert(usec1 > 200000 && usec1 < 300000);
-	assert(usec2 > 80000 && usec2 < 120000);
+	assert(usec2 > 80000 && usec2 < 80000);
 }
 
 // int main()
