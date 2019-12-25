@@ -4,7 +4,7 @@
 #include <sys/time.h>
 #include <assert.h>
 
-#define EVENT__HAVE_NANOSLEEP 1
+#define EVENT__HAVE_USLEEP 1
 
 void
 evutil_usleep_(const struct timeval *tv)
