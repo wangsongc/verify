@@ -62,6 +62,7 @@ jobs:
             cmake --build .;
             sudo python3 ../test-export/test-export.py shared;
           else
+            cmake --build .;
             cmake --build . --target verify;
           fi
         fi
