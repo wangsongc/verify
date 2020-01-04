@@ -7,19 +7,19 @@ on:
     branches:
     - master
 
+
 jobs:
   cmake:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-16.04]
-        EVENT_CMAKE_OPTIONS: ["","-DEVENT__DISABLE_OPENSSL=ON"]
+        EVENT_CMAKE_OPTIONS: [""]
         include:
           # clang
-          - os: ubuntu-18.04
-            # 变量定义要修改，编译器选择要修改
+          - os: ubuntu-16.04
             EVENT_BUILD_METHOD: cmake
-            EVENT_CMAKE_OPTIONS: ""         
+            EVENT_CMAKE_OPTIONS: "-DEVENT__DISABLE_OPENSSL=ON"        
     steps:
     - uses: actions/checkout@v1
     - name: Cache
@@ -41,7 +41,7 @@ jobs:
           export
           CTEST_PARALLEL_LEVEL=1
           CTEST_OUTPUT_ON_FAILURE=1;
-          mkdir build &&
+          mkdir -p build &&
           cd build &&
           pwd &&
           cmake .. ${{ matrix.EVENT_CMAKE_OPTIONS }};
