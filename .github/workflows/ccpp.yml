@@ -1,0 +1,47 @@
+name: CI on linux
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  push:
+    branches:
+    - master
+
+jobs:
+  cmake:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-16.04]
+        EVENT_CMAKE_OPTIONS: ["","-DEVENT__DISABLE_OPENSSL=ON"]
+        include:
+          # clang
+          - os: ubuntu-18.04
+            # 变量定义要修改，编译器选择要修改
+            EVENT_BUILD_METHOD: cmake
+            EVENT_CMAKE_OPTIONS: ""         
+    steps:
+    - uses: actions/checkout@v1
+    - name: Cache
+      uses: actions/cache@v1.0.3
+      with:
+        # A directory to store and save the cache
+        path: build
+      # An explicit key for restoring and saving the cache
+        key: ${{ runner.os }}-depends
+    - name: install depend
+      run: |
+        sudo apt install zlib1g-dev libssl-dev build-essential automake autoconf cmake lcov
+    - name: build and test
+      env:
+        CC: gcc
+      shell: bash
+      run: |
+        # build and test
+          export
+          CTEST_PARALLEL_LEVEL=1
+          CTEST_OUTPUT_ON_FAILURE=1;
+          mkdir build &&
+          cd build &&
+          pwd &&
+          cmake .. ${{ matrix.EVENT_CMAKE_OPTIONS }};
