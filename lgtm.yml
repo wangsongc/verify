@@ -1,0 +1,15 @@
+path_classifiers:
+  test:
+    - "**/*test*"
+  docs:
+    - "**/doc"
+
+queries:
+  - exclude: ./test
+extraction:
+  c:
+    configure:
+      command:
+      - ./autogen.sh
+      - ./configure
+      - make
