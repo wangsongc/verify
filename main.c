@@ -4,6 +4,11 @@
 #include <unistd.h>
 #include <assert.h>
 
+#include <time.h>
+#include <sys/time.h>
+#include <unistd.h>
+#include <assert.h>
+
 #define EVENT__HAVE_USLEEP 1
 
 void
