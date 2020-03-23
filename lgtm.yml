@@ -1,15 +1,20 @@
-path_classifiers:
-  test:
-    - "**/*test*"
-  docs:
-    - "**/doc"
+# path_classifiers:
+#   test:
+#     - "**/*test*"
+#   docs:
+#     - "**/doc"
 
-queries:
-  - exclude: ./test
-extraction:
-  cpp:
-    configure:
-      command:
-      - ./autogen.sh
-      - ./configure
-      - make
+# queries:
+#   - exclude: ./test
+# extraction:
+#   cpp:
+#     configure:
+#       command:
+#       - ./autogen.sh
+#       - ./configure
+#       - make
+
+# Format of this file: https://lgtm.com/help/lgtm/lgtm.yml-configuration-file
+path_classifiers:
+  documentation:
+    - runtime/tutor/tutor*
