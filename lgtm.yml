@@ -7,7 +7,7 @@ path_classifiers:
 queries:
   - exclude: ./test
 extraction:
-  c:
+  cpp:
     configure:
       command:
       - ./autogen.sh
