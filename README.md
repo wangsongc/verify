@@ -5,8 +5,10 @@
 ![](https://github.com/wangsongc/verify/workflows/CI%20on%20linux/badge.svg?master)
 [![codecov](https://codecov.io/gh/wangsongc/verify/branch/master/graph/badge.svg)](https://codecov.io/gh/wangsongc/verify)
 
-[![codecov-c++](https://codecov.io/gh/ygj6/msgpack-c/branch/master/graph/badge.svg)](https://codecov.io/gh/ygj6/msgpack-c/branch/master)
-[![codecov-c](https://codecov.io/gh/ygj6/msgpack-c/branch/c_master/graph/badge.svg)](https://codecov.io/gh/ygj6/msgpack-c/branch/c_master)
+# msgpack-c++
+[![codecov](https://codecov.io/gh/ygj6/msgpack-c/branch/master/graph/badge.svg)](https://codecov.io/gh/ygj6/msgpack-c/branch/master)
+# msgpack-c
+[![codecov](https://codecov.io/gh/ygj6/msgpack-c/branch/c_master/graph/badge.svg)](https://codecov.io/gh/ygj6/msgpack-c/branch/c_master)
 # verify
 
 verify build and CI problems in here.
